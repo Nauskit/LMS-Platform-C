@@ -1,11 +1,9 @@
-"use client";
+import React from 'react'
 
-const CreatePage = () => {
+function page() {
     return (
-        <div>
-            Create Page
-        </div>
-    );
+        <div>page</div>
+    )
 }
 
-export default CreatePage
+export default page
