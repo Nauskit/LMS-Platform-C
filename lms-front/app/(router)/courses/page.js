@@ -15,10 +15,11 @@ function Courese() {
                 <Content />
             </div>
             {/* right constainer */}
-            <div className='p-5 bg-white rounded-xl'>
+            <div className='p-5 bg-white rounded-xl '>
                 <SideBanners />
             </div>
         </div>
+
     )
 }
 

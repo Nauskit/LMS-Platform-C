@@ -4,7 +4,7 @@ import Image from 'next/image'
 function CourseItem({ course }) {
     return (
         <div className='border rounded-xl shadow-lg hover:scale-105 cursor-pointer
-        active:opacity-80'>
+        active:opacity-80 '>
             <Image className='rounded-t-xl' src={course?.banner?.url}
                 width={500}
                 height={150} alt='coursesImage' />

@@ -19,7 +19,7 @@ function SideBanners() {
 
 
     return (
-        <div>
+        <div className='flex gap-5 items-center'>
             {sideBanners.map((item, index) => (
                 <div key={index}>
                     <Image className='rounded-xl cursor-pointer hover:shadow-xl' onClick={() => window.open(item?.url)} src={item.banner.url} alt='banner' width={500} height={300} />
