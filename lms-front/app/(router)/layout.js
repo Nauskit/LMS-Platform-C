@@ -5,10 +5,10 @@ import Header from './_components/Header'
 function layout({ children }) {
     return (
         <div>
-            <div className='w-64 fixed sm:block'>
+            <div className='md:w-64 fixed md:block hidden'>
                 <SideNav />
             </div>
-            <div className='sm:ml-64'>
+            <div className='md:ml-64'>
                 <Header />
                 {children}
             </div>

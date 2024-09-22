@@ -16,6 +16,24 @@ const getCoursesList = async () => {
 
     const result = await request('https://us-west-2.cdn.hygraph.com/content/cm179x8d4023307ur5cgw1trf/master', query)
     return result;
+
+
+}
+const getSideBanner = async () => {
+    const query = gql`
+    query GetSideBanner {
+        sideBanners {
+          id
+          name
+          banner {
+            id
+            url
+          }
+          url
+        }
+      }`
+    const result = await request('https://us-west-2.cdn.hygraph.com/content/cm179x8d4023307ur5cgw1trf/master', query)
+    return result;
 }
 
-export default getCoursesList
+export default { getCoursesList, getSideBanner }

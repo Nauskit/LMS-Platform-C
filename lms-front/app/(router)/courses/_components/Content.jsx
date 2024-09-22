@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import getCoursesList from '@/app/_utils/GlobalApi';
 import {
     Select,
     SelectContent,
@@ -8,6 +7,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import CourseItem from './CourseItem';
+import GlobalApi from '@/app/_utils/GlobalApi';
 
 
 function Content() {
@@ -16,10 +16,17 @@ function Content() {
         getAllCourses();
     }, [])
 
-    const getAllCourses = async () => {
-        const result = await getCoursesList()
-        console.log(result)
-        setCourseList(result?.courseLists)
+    // const getAllCourses = async () => {
+    //     const result = await getCoursesList()
+    //     console.log(result)
+    //     setCourseList(result?.courseLists)
+    // }
+
+    const getAllCourses = () => {
+        GlobalApi.getCoursesList().then(resp => {
+            console.log(resp);
+            setCourseList(resp?.courseLists)
+        })
     }
     return (
         <div className='p-5 bg-white rounded-lg mt-3'>
@@ -39,11 +46,18 @@ function Content() {
             </div>
             {/* Display */}
             <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4'>
-                {courseLists.map((item, index) => (
+                {courseLists?.length > 0 ? courseLists.map((item, index) => (
                     <div key={index}>
                         <CourseItem course={item} />
                     </div>
-                ))}
+                ))
+                    :
+                    [1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+                        <div key={index} className='w-full h-[240px]
+                        rounded-xl m-2 bg-slate-200 animate-pulse'>
+                        </div>
+                    ))
+                }
             </div>
         </div>
 
