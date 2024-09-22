@@ -1,15 +1,17 @@
 import React from 'react'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import Banner from './_components/Banner'
 
 function Courese() {
     return (
-        <div className='p-6'>
-            <Link href='/tutor/create'>
-                <Button>
-                    New Courses
-                </Button>
-            </Link>
+        <div className='grid grid-cols-1 md:grid-cols-3 p-5'>
+            {/* left container */}
+            <div className='col-span-2'>
+                <Banner />
+            </div>
+            {/* right constainer */}
+            <div>
+                Right section
+            </div>
         </div>
     )
 }
